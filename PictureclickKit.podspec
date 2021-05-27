@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "PictureclickKit"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.2"
   spec.summary      = "点击图片浏览大图"
 
   # This description is used to generate tags and improve search results.
@@ -92,7 +92,7 @@ Pod::Spec.new do |spec|
   # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
   # spec.exclude_files = "Classes/Exclude"
 
-  spec.public_header_files = "Classes/**/*.h"
+  # spec.public_header_files = "Classes/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,5 +134,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'SVProgressHUD', '~> 1.1.3'
   spec.dependency 'YYWebImage'
   spec.ios.vendored_frameworks = 'Framework/PictureClickMangerKit.framework'
-
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
